@@ -1,174 +1,3 @@
-// #include <stdio.h>
-// #include <stdlib.h>
-
-// struct Node {
-//     int data;
-//     struct Node* prev;
-//     struct Node* next;
-// };
-
-// struct Node* head = NULL;
-
-// void createList() {
-//     head = NULL;
-//     printf("List created successfully!\n");
-// }
-
-// void insertNode(int data, int position) {
-//     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-//     newNode->data = data;
-
-//     if (position == 1) {
-//         newNode->next = head;
-//         newNode->prev = NULL;
-//         if (head != NULL) {
-//             head->prev = newNode;
-//         }
-//         head = newNode;
-//     } else {
-//         struct Node* current = head;
-//         int i = 1;
-//         while (current != NULL && i < position - 1) {
-//             current = current->next;
-//             i++;
-//         }
-//         if (current == NULL) {
-//             printf("Invalid position!\n");
-//             return;
-//         }
-//         newNode->next = current->next;
-//         newNode->prev = current;
-//         if (current->next != NULL) {
-//             current->next->prev = newNode;
-//         }
-//         current->next = newNode;
-//     }
-//     printf("Node inserted successfully!\n");
-// }
-
-// void deleteNode(int position) {
-//     if (head == NULL) {
-//         printf("List is empty!\n");
-//         return;
-//     }
-
-//     struct Node* temp;
-//     if (position == 1) {
-//         temp = head;
-//         head = head->next;
-//         if (head != NULL) {
-//             head->prev = NULL;
-//         }
-//     } else {
-//         struct Node* current = head;
-//         int i = 1;
-//         while (current != NULL && i < position) {
-//             temp = current;
-//             current = current->next;
-//             i++;
-//         }
-//         if (current == NULL) {
-//             printf("Invalid position!\n");
-//             return;
-//         }
-//         temp->next = current->next;
-//         if (current->next != NULL) {
-//             current->next->prev = temp;
-//         }
-//     }
-//     free(temp);
-//     printf("Node deleted successfully!\n");
-// }
-
-// void displayList() {
-//     if (head == NULL) {
-//         printf("List is empty!\n");
-//         return;
-//     }
-
-//     struct Node* current = head;
-//     printf("List: ");
-//     while (current != NULL) {
-//         printf("%d ", current->data);
-//         current = current->next;
-//     }
-//     printf("\n");
-// }
-
-// int main() {
-//     int choice, data, position;
-
-//     while (1) {
-//         printf("\nMenu:\n");
-//         printf("1. Create List\n");
-//         printf("2. Insert Node\n");
-//         printf("3. Delete Node\n");
-//         printf("4. Display List\n");
-//         printf("5. Exit\n");
-//         printf("Enter your choice: ");
-//         scanf("%d", &choice);
-
-//         switch (choice) {
-//             case 1:
-//                 createList();
-//                 break;
-//             case 2:
-//                 printf("Enter data to insert: ");
-//                 scanf("%d", &data);
-//                 printf("Enter position (1-based): ");
-//                 scanf("%d", &position);
-//                 insertNode(data, position);
-//                 break;
-//             case 3:
-//                 printf("Enter position to delete (1-based): ");
-//                 scanf("%d", &position);
-//                 deleteNode(position);
-//                 break;
-//             case 4:
-//                 displayList();
-//                 break;
-//             case 5:
-//                 exit(0);
-//             default:
-//                 printf("Invalid choice!\n");
-//         }
-//     }
-
-//     return 0;
-// }
-
-//**************************************************************************************************************************************
-// Function to delete a node with given data from the doubly linked list
-// void deleteNode() {
-//     int data;
-//     printf("Enter data to delete: ");
-//     scanf("%d", &data);
-
-//     struct Node *temp = head;
-
-//     while (temp != NULL) {
-//         if (temp->data == data) {
-//             if (temp->prev != NULL) {
-//                 temp->prev->next = temp->next;
-//             } else {
-//                 head = temp->next;
-//             }
-
-//             if (temp->next != NULL) {
-//                 temp->next->prev = temp->prev;
-//             }
-
-//             free(temp);
-//             printf("Data deleted successfully\n");
-//             return;
-//         }
-//         temp = temp->next;
-//     }
-
-//     printf("Data not found in the list\n");
-// }
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -359,6 +188,175 @@ int main() {
         }
 
     } 
+    // #include <stdio.h>
+// #include <stdlib.h>
+
+// struct Node {
+//     int data;
+//     struct Node* prev;
+//     struct Node* next;
+// };
+
+// struct Node* head = NULL;
+
+// void createList() {
+//     head = NULL;
+//     printf("List created successfully!\n");
+// }
+
+// void insertNode(int data, int position) {
+//     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+//     newNode->data = data;
+
+//     if (position == 1) {
+//         newNode->next = head;
+//         newNode->prev = NULL;
+//         if (head != NULL) {
+//             head->prev = newNode;
+//         }
+//         head = newNode;
+//     } else {
+//         struct Node* current = head;
+//         int i = 1;
+//         while (current != NULL && i < position - 1) {
+//             current = current->next;
+//             i++;
+//         }
+//         if (current == NULL) {
+//             printf("Invalid position!\n");
+//             return;
+//         }
+//         newNode->next = current->next;
+//         newNode->prev = current;
+//         if (current->next != NULL) {
+//             current->next->prev = newNode;
+//         }
+//         current->next = newNode;
+//     }
+//     printf("Node inserted successfully!\n");
+// }
+
+// void deleteNode(int position) {
+//     if (head == NULL) {
+//         printf("List is empty!\n");
+//         return;
+//     }
+
+//     struct Node* temp;
+//     if (position == 1) {
+//         temp = head;
+//         head = head->next;
+//         if (head != NULL) {
+//             head->prev = NULL;
+//         }
+//     } else {
+//         struct Node* current = head;
+//         int i = 1;
+//         while (current != NULL && i < position) {
+//             temp = current;
+//             current = current->next;
+//             i++;
+//         }
+//         if (current == NULL) {
+//             printf("Invalid position!\n");
+//             return;
+//         }
+//         temp->next = current->next;
+//         if (current->next != NULL) {
+//             current->next->prev = temp;
+//         }
+//     }
+//     free(temp);
+//     printf("Node deleted successfully!\n");
+// }
+
+// void displayList() {
+//     if (head == NULL) {
+//         printf("List is empty!\n");
+//         return;
+//     }
+
+//     struct Node* current = head;
+//     printf("List: ");
+//     while (current != NULL) {
+//         printf("%d ", current->data);
+//         current = current->next;
+//     }
+//     printf("\n");
+// }
+
+// int main() {
+//     int choice, data, position;
+
+//     while (1) {
+//         printf("\nMenu:\n");
+//         printf("1. Create List\n");
+//         printf("2. Insert Node\n");
+//         printf("3. Delete Node\n");
+//         printf("4. Display List\n");
+//         printf("5. Exit\n");
+//         printf("Enter your choice: ");
+//         scanf("%d", &choice);
+
+//         switch (choice) {
+//             case 1:
+//                 createList();
+//                 break;
+//             case 2:
+//                 printf("Enter data to insert: ");
+//                 scanf("%d", &data);
+//                 printf("Enter position (1-based): ");
+//                 scanf("%d", &position);
+//                 insertNode(data, position);
+//                 break;
+//             case 3:
+//                 printf("Enter position to delete (1-based): ");
+//                 scanf("%d", &position);
+//                 deleteNode(position);
+//                 break;
+//             case 4:
+//                 displayList();
+//                 break;
+//             case 5:
+//                 exit(0);
+//             default:
+//                 printf("Invalid choice!\n");
+//         }
+//     }
+
+//     return 0;
+// }
+
+//**************************************************************************************************************************************
+// Function to delete a node with given data from the doubly linked list
+// void deleteNode() {
+//     int data;
+//     printf("Enter data to delete: ");
+//     scanf("%d", &data);
+
+//     struct Node *temp = head;
+
+//     while (temp != NULL) {
+//         if (temp->data == data) {
+//             if (temp->prev != NULL) {
+//                 temp->prev->next = temp->next;
+//             } else {
+//                 head = temp->next;
+//             }
+
+//             if (temp->next != NULL) {
+//                 temp->next->prev = temp->prev;
+//             }
+
+//             free(temp);
+//             printf("Data deleted successfully\n");
+//             return;
+//         }
+//         temp = temp->next;
+//     }
+
+//     printf("Data not found in the list\n");
+// }
 
     return 0;
 }
