@@ -60,3 +60,17 @@ int main(){
     printf("MAXIMUM PROFIT: %d",result);
     return 0;
 }
+
+
+//Sample output
+// ENTER THE NUMBER OF JOBS: 4
+// ENTER THE DEADLINES OF THE JOBS: 2
+// 1
+// 2
+// 1
+// ENTER THE PROFIT OF THE JOBS: 50
+// 15
+// 10
+// 25
+// JOB SEQUENCE: 4 1 
+// MAXIMUM PROFIT: 75
